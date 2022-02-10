@@ -3,6 +3,31 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div>
+        <h3>
+            Список продуктів
+        </h3>
+        <table>
+            <tr>
+                <td>Id</td>
+                <td>Title</td>
+                <td>Description</td>
+                <td>Price</td>
+                <td></td>
+            </tr>
+            @{
+                foreach (var p in ViewBag.Products)
+                {
+                    <tr>
+                        <td><p>p.Id</p></td>
+                        <td><p>p.Name</p></td>
+                        <td><p>p.Description</p></td>
+                        <td><p>p.Price</p></td>
+                        <td><p><a href="/Home/Buy/@p.Id">Купити</a></p></td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+
 </div>

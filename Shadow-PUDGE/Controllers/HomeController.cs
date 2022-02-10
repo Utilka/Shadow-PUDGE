@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Shadow_PUDGE.Data;
 using Shadow_PUDGE.Models;
 using System.Diagnostics;
 
@@ -7,14 +8,18 @@ namespace Shadow_PUDGE.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _dbContext;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ApplicationDbContext dbContext, ILogger<HomeController> logger)
         {
             _logger = logger;
+            _dbContext = dbContext;
         }
 
         public IActionResult Index()
         {
+            IEnumerable<Product> products =  _dbContext.Products;
+            ViewBag.Products = products;
             return View();
         }
 

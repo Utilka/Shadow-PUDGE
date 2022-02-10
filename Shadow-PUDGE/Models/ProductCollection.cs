@@ -1,6 +1,6 @@
 ﻿namespace Shadow_PUDGE.Models
 {
-    public class Collections
+    public class ProductCollection
     {
         public int Id { get; set; }
         public string Title { get; set; }
