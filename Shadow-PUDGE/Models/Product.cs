@@ -16,7 +16,7 @@ namespace Shadow_PUDGE.Models
         //public Collection<Media>? Medias { get; set; }
         public int Price { get; set; }
         public int PriceCompare { get; set; }
-        public ProductStatus Status { get; set; }
+        public ProductStatus Shtatus { get; set; }
         public DateTime CreatedAt { get; set; }
     }
 }

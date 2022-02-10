@@ -15,6 +15,35 @@ namespace Shadow_PUDGE.Controllers
             _logger = logger;
             _dbContext = dbContext;
         }
+        public IActionResult Create()
+        {
+      
+            return View();
+        }
+        [HttpPost]
+         public IActionResult Create(Product product)
+        {
+            if (product != null) 
+            {
+                _dbContext.Products.Add(product);
+                _dbContext.SaveChanges();
+            }
+            return RedirectToAction(nameof(Index));
+        }
+        [HttpGet]
+        public ActionResult Buy(int? Id)
+        {
+            ViewBag.Id = Id ??0;
+            return View();
+        }
+        [HttpPost]
+        public string Buy(Order order)
+        {
+           // order.CreatedAt = DateTime.Now;
+            _dbContext.Orders.Add(order);
+            _dbContext.SaveChanges();
+            return "ABOBA";
+        }
 
         public IActionResult Index()
         {

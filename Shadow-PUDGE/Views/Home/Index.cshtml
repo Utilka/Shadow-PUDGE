@@ -19,10 +19,10 @@
                 foreach (var p in ViewBag.Products)
                 {
                     <tr>
-                        <td><p>p.Id</p></td>
-                        <td><p>p.Name</p></td>
-                        <td><p>p.Description</p></td>
-                        <td><p>p.Price</p></td>
+                        <td><p>@p.Id</p></td>
+                        <td><p>@p.Title</p></td>
+                        <td><p>@p.Description</p></td>
+                        <td><p>@p.Price</p></td>
                         <td><p><a href="/Home/Buy/@p.Id">Купити</a></p></td>
                     </tr>
                 }
