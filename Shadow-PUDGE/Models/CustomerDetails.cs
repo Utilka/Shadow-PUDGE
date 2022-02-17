@@ -11,6 +11,6 @@ namespace Shadow_PUDGE.Models
         public int Phone { get; set; }
         public DateTime RegisterDate { get; set; }
 
-        
+        public List<Order> Orders { get; set; }
     }
 }

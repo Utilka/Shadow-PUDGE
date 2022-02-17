@@ -16,5 +16,18 @@ namespace Shadow_PUDGE.Data
             : base(options)
         {
         }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.Entity<CustomerDetails>()
+                .HasMany<Order>(customerDetails => customerDetails.Orders)
+                .WithOne(order => order.CustomerDetails)
+                .HasForeignKey(order => order.UserId);
+            builder.Entity<Product>()
+                .HasMany<Media>(paroduct => paroduct.Medias)
+                .WithOne(media => media.Product)
+                .HasForeignKey(media => media.ProductId);
+        }
     }
 }

@@ -18,6 +18,6 @@ namespace Shadow_PUDGE.Models
         public ProductStatus Shtatus { get; set; }
         public DateTime CreatedAt { get; set; }
 
-        public Collection<Media>? Medias { get; set; }
+        public List<Media> Medias { get; set; }
     }
 }
