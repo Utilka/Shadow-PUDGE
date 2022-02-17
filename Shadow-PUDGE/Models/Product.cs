@@ -13,10 +13,11 @@ namespace Shadow_PUDGE.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public string? Description { get; set; }
-        //public Collection<Media>? Medias { get; set; }
         public int Price { get; set; }
         public int PriceCompare { get; set; }
         public ProductStatus Shtatus { get; set; }
         public DateTime CreatedAt { get; set; }
+
+        public Collection<Media>? Medias { get; set; }
     }
 }
