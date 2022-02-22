@@ -19,5 +19,8 @@ namespace Shadow_PUDGE.Models
         public DateTime CreatedAt { get; set; }
 
         public List<Media> Medias { get; set; }
+        public List<Order_item> Order_Items { get; set; }
+        public List<Product_tag> Product_Tags { get; set; }
+        public List<Collection_product> Collection_products { get; set; }
     }
 }

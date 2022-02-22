@@ -13,5 +13,7 @@
 
         public string UserId { get; set; }
         public CustomerDetails CustomerDetails { get; set; }
+
+        public List<Order_item> Order_Items { get; set; }
     }
 }
