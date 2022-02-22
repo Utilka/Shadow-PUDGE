@@ -11,7 +11,7 @@
         public DateTime CreatedAt { get; set; }
         public OrderStatus Status { get; set; }
 
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public CustomerDetails CustomerDetails { get; set; }
     }
 }
