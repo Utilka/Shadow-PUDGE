@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Shadow_PUDGE.Data;
 using Shadow_PUDGE.Models;
 using System.Diagnostics;
@@ -15,21 +16,7 @@ namespace Shadow_PUDGE.Controllers
             _logger = logger;
             _dbContext = dbContext;
         }
-        public IActionResult Create()
-        {
-      
-            return View();
-        }
-        [HttpPost]
-         public IActionResult Create(Product product)
-        {
-            if (product != null) 
-            {
-                _dbContext.Products.Add(product);
-                _dbContext.SaveChanges();
-            }
-            return RedirectToAction(nameof(Index));
-        }
+       
         [HttpGet]
         public ActionResult Buy(int? Id)
         {
@@ -47,8 +34,10 @@ namespace Shadow_PUDGE.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<Product> products =  _dbContext.Products;
+            IEnumerable<Product> products =  _dbContext.Products.Include(p => p.Medias);
+
             ViewBag.Products = products;
+
             return View();
         }
 
