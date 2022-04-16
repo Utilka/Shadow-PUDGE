@@ -1,5 +1,4 @@
 ﻿@model Shadow_PUDGE.Models.ProductCollection
-
 @{
     ViewData["Title"] = "Details";
 }
@@ -10,23 +9,73 @@
     <h4>ProductCollection</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Title)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Title)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Description)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Description)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.CreatedAt)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CreatedAt)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Collection_products)
+        </dt>
+        <dd class="col-sm-10">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Title
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                        <th>
+                            PriceCompare
+                        </th>
+                        <th>
+                            Shtatus
+                        </th>
+                        <th>
+                            CreatedAt
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Collection_products)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Product.Title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Product.Price)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Product.PriceCompare)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Product.Shtatus)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Product.CreatedAt)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         </dd>
     </dl>
 </div>
@@ -34,3 +83,4 @@
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
+

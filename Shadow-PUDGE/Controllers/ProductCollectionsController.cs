@@ -35,6 +35,7 @@ namespace Shadow_PUDGE.Controllers
             }
 
             var productCollection = await _context.ProductCollections
+                .Include(p => p.Collection_products).ThenInclude(x => x.Product)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (productCollection == null)
             {

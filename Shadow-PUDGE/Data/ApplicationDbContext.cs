@@ -44,6 +44,7 @@ namespace Shadow_PUDGE.Data
                 .HasMany<Product_tag>(t => t.Product_Tags)
                 .WithOne(pt => pt.Tag)
                 .HasForeignKey(pt => pt.TagId);
+
             builder.Entity<Product>()
                 .HasMany<Collection_product>(product => product.Collection_products)
                 .WithOne(pc => pc.Product)
