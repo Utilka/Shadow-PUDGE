@@ -10,5 +10,10 @@
         public int Id { get; set; }
         public DateTime CreatedAt { get; set; }
         public OrderStatus Status { get; set; }
+
+        public string UserId { get; set; }
+        public CustomerDetails CustomerDetails { get; set; }
+
+        public List<Order_item> Order_Items { get; set; }
     }
 }
